@@ -1,0 +1,47 @@
+body{
+  color:#c76e0e;
+
+}
+.viktasoft-footer{
+  background: #04081f;
+  color:#c76e0e;
+  min-height: 200px;
+  /* position: absolute; */
+  width: 100%;
+  bottom:0;
+}
+.Copyright{
+  bottom: 0;
+  margin-left: 5%;
+  /* margin-top: 60px; */
+  margin-right: 5%;
+  /* margin-top: 100px; */
+}
+.header{
+  background: #04081f;
+}
+.header:hover{
+  background: #04081f;
+}
+.restrict{
+  max-height: 425px;
+  min-height: 425px;
+}
+.nav-link{
+  color:#884c14;
+}
+.nav-item{
+  color:#884c14;
+}
+.card-control{
+  height:100px;
+  border-radius: 0px;
+  border: 1px solid #e1e1e1;
+
+}
+.card-flex{
+  height:150px;
+  border-radius: 0px;
+  /* border: 1px solid #999; */
+
+}
