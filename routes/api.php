@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/pins/{id}', 'PinsController@index');
+Route::post('/form','FormController@store');
+Route::post('/newform','FormController@update');

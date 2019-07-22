@@ -19,7 +19,7 @@ class CreatePinsTable extends Migration
             $table->string('SerialNo');
             $table->string('BatchNo');
             $table->string('owner')->nullable();
-            $table->bigInteger('usage')->nullable();
+            $table->bigInteger('usage')->default(0);
             $table->timestamps();
         });
     }

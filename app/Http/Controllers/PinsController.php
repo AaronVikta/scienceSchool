@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Pins;
 use Illuminate\Http\Request;
+use App\Pins;
 use Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PinsImport;
@@ -15,9 +15,20 @@ class PinsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
+        $pin = Pins::where('PinCode', $id)->get();
+        if(count($pin)>0){
+        $pin =$pin[0];
+
+        return response()->json($pin);
+         // dd($pin);
+       }
+       else{
+         return false;
+       }
+        // response()->json(['status'=>'failed'], 404);
     }
 
     /**
@@ -53,7 +64,7 @@ class PinsController extends Controller
      * @param  \App\Pins  $pins
      * @return \Illuminate\Http\Response
      */
-    public function show(Pins $pins)
+    public function show($id)
     {
         //
     }

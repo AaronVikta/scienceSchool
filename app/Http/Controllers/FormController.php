@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Form;
 use Illuminate\Http\Request;
+use App\Form;
+use App\Pins;
+use App\User;
 
 class FormController extends Controller
 {
@@ -36,6 +37,70 @@ class FormController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+          'fullname'=>'required',
+          'sex'=>'required',
+          'address'=>'required',
+          'lga'=>'required',
+          'state'=>'required',
+          'last_school'=>'required',
+          'basic_cert_no'=>'required',
+          'school_of_choice'=>'required',
+          'choice_of_center'=>'required',
+          'pin'=>'required',
+          'user'=>'required'
+        ]);
+        $user=$request->user;
+        $user= User::where('id',$user)->get();
+        $user =$user['0'];
+        $name= $user['name'];
+        $passport=$user['profile_pic'];
+        $pin= $request->pin;
+        $pins = Pins::where('PinCode', $pin)->get();
+        if(count($pins)>0){
+            $pin =$pins[0];
+            $owner=$pin['owner'];
+            // dd($owner);
+            $times=$pin['usage'];
+            // dd($times);
+            if(($owner==""||$owner==$request->fullname)){
+              if($times<2){
+                $form = new Form;
+                $form->fullname = $request->fullname;
+                $form->sex=$request->sex;
+                $form->address=$request->address;
+                $form->lga=$request->lga;
+                $form->state=$request->state;
+                $form->last_school=$request->last_school;
+                $form->basic_cert_no=$request->basic_cert_no;
+                $form->school_of_choice=$request->school_of_choice;
+                $form->choice_of_center=$request->choice_of_center;
+                $form->subject1=$request->sub1;
+                $form->subject2=$request->sub2;
+                $form->subject3=$request->sub3;
+                $form->subject4=$request->sub4;
+                $form->subject5=$request->sub5;
+                $form->subject6=$request->sub6;
+                $form->subject7=$request->sub7;
+                $form->subject8=$request->sub8;
+                $form->subject9=$request->sub9;
+                $form->subject10=$request->sub10;
+                $form->grade1=$request->grade1;
+                $form->grade2=$request->grade2;
+                $form->grade3=$request->grade3;
+                $form->grade4=$request->grade4;
+                $form->grade5=$request->grade5;
+                $form->grade6=$request->grade6;
+                $form->grade7=$request->grade7;
+                $form->grade8=$request->grade8;
+                $form->grade9=$request->grade9;
+                $form->grade10=$request->grade10;
+                $form->passport=$passport;
+                $form->save();
+                return response()->json("ok");
+            }
+          }
+        }
     }
 
     /**
@@ -67,9 +132,28 @@ class FormController extends Controller
      * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Form $form)
+    public function update(Request $request)
     {
         //
+        $user=$request->user;
+        // dd($user);
+        $id =$request->pin;
+        // dd($name);
+        $pin = Pins::where('PinCode', $id)->get();
+        $pin =$pin[0];
+        $id=$pin['id'];
+        $times= $pin['usage'];
+        $times=$times+1;
+        // dd($id);
+
+        $updatedPin =Pins::findOrFail($id);
+        $updatedPin->usage=$times;
+        $updatedPin->owner=$user;
+        $updatedPin->update();
+        return response()->json(
+          ['status'=>'ok',200]
+        );
+
     }
 
     /**
