@@ -8,6 +8,23 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VueHtmlToPaper from 'vue-html-to-paper';
+
+const options = {
+  name: '_blank',
+  specs: [
+    'fullscreen=yes',
+    'titlebar=yes',
+    'scrollbars=yes'
+  ],
+  styles: [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+    'https://unpkg.com/kidlat-css/css/kidlat.css'
+  ]
+}
+
+Vue.use(VueHtmlToPaper, options);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,6 +39,8 @@ Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttrib
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admission-component', require('./components/AdmissionComponent.vue').default);
+Vue.component('submitted-component', require('./components/submittedComponent.vue').default);
+Vue.component('my-form', require('./components/myFormComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -25,14 +25,19 @@
                   @endforeach
                 @endif
                 @if(session('success'))
-                  {{session('success')}}
+                  @foreach($success as $msg)
+                    {{$msg}}
+                  @endforeach
                 @endif
                 <form class="" action="/import" method="post" enctype="multipart/form-data">
                   @csrf
                   <input type="file" name="file" value="" placeholder="Upload Excel" required>
-                  <input type="submit" class="" name="" value="Upload Excel">
+                  <input type="submit" class="mt-1" name="" value="Upload Excel">
                 </form>
               </div>
+              <submitted-component></submitted-component>
+              @else
+              <my-form></my-form>
             @endif
         </div>
     </div>

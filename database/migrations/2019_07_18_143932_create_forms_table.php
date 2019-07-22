@@ -21,7 +21,8 @@ class CreateFormsTable extends Migration
             $table->string('lga');
             $table->string('state');
             $table->string('last_school');
-            $table->string('basic_cert_no');
+            $table->string('basic_cert_no')->unique();
+            $table->string('parent');
             $table->string('subject1')->nullable();
             $table->string('subject2')->nullable();
             $table->string('subject3')->nullable();

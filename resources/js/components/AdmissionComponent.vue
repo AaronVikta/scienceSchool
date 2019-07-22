@@ -189,6 +189,12 @@
            placeholder="Retype Your PinCode">
         </div>
       </div>
+      <div class="form-row">
+        <div class="col mt-1">
+          <input type="text" class="form-control" v-model="parent"
+           placeholder="Name of Parent">
+        </div>
+      </div>
       <p class="text-center mt-1">Subject for Examination:
         English,Mathematics, and Basic Science/Technology.</p>
       <div class="form-row">
@@ -245,6 +251,7 @@ export default {
       choice_of_center:"",
       pin:"",
       user:"",
+      parent:"",
     }
   },
   mounted(){
@@ -299,6 +306,7 @@ console.log(this.$userId)
         basic_cert_no:this.basic_cert_no,
         school_of_choice:this.school_of_choice,
         choice_of_center:this.choice_of_center,
+        parent:this.parent,
         sub1:this.sub1,
         sub2:this.sub2,
         sub3:this.sub3,
@@ -319,6 +327,7 @@ console.log(this.$userId)
         grad9:this.grad9,
         grad10:this.grad10,
         pin:this.pin,
+        parent:this.parent,
         user:user
       })
       .then(response=>{

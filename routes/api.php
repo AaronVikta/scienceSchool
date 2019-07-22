@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/pins/{id}', 'PinsController@index');
 Route::post('/form','FormController@store');
 Route::post('/newform','FormController@update');
+Route::get('/forms','FormController@index');
+Route::get('/myform/{id}','FormController@myForm');

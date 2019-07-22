@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Form;
 use App\Pins;
 use App\User;
+use App\Http\Resources\FormResource;
 
 class FormController extends Controller
 {
@@ -16,6 +17,7 @@ class FormController extends Controller
     public function index()
     {
         //
+      return FormResource::collection(Form::paginate(5));
     }
 
     /**
@@ -96,6 +98,7 @@ class FormController extends Controller
                 $form->grade9=$request->grade9;
                 $form->grade10=$request->grade10;
                 $form->passport=$passport;
+                $form->parent=$request->parent;
                 $form->save();
                 return response()->json("ok");
             }
@@ -123,6 +126,11 @@ class FormController extends Controller
     public function edit(Form $form)
     {
         //
+    }
+    public function myForm($pin){
+      $form =Form::where('basic_cert_no',$pin)->get();
+      return response()->json($form);
+
     }
 
     /**
