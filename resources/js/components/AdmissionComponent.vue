@@ -1,16 +1,23 @@
 <template>
   <div class="container">
-    <h4 class="text-center">Input Your Scratch Card Pin Code</h4>
+    <h4 class="text-center">Input Your Scratch Card Pin and hit verify for verification</h4>
     <form v-on:submit.prevent>
   <div class="form-group row">
     <div class="container">
       <span class="text-danger text-center">{{errormsg}}</span>
       <span class="text-success text-center">{{msg}}</span>
     </div>
-    <label for="PinCode" class="col-sm-2 col-form-label">PinCode</label>
+    <label for="PinCode" class="col-sm-2 col-form-label">Scratch Card Pin</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" v-model="pin_code"
-      v-on:keyup.enter="verify()" placeholder="PinCode">
+       placeholder="PinCode">
+    </div>
+    <label class="col-sm-2 col-form-label">
+
+    </label>
+    <div class="col-sm-10">
+      <button type="button" class="form-control mt-1 btn btn-primary"
+      @click="verify()" name="button">verify Pin</button>
     </div>
   </div>
 </form>
@@ -20,6 +27,7 @@
     <div class="col-sm-10" v-if="showForm">
 
         <h5 class="text-center">Basic Details</h5>
+        Note: All field are required
         <div class="form-row">
         <div class="col mb-1">
           <input type="text" class="form-control" v-model="fullname" placeholder="Surname  Firstname">
@@ -65,97 +73,97 @@
     <h6 class="text-center">Subjects and Grades</h6>
           <div class="form-row">
           <div class="col mb-1">
-            <input type="text" class="form-control"
+            <input type="text" required class="form-control"
             v-model="sub1" placeholder="Subject 1">
           </div>
           <div class="col mb-1">
-            <input type="text" class="form-control"v-model="grad1" placeholder="Grade">
+            <input type="text" required class="form-control"v-model="grad1" placeholder="Grade">
           </div>
         </div>
         <div class="form-row">
         <div class="col mb-1">
-          <input type="text" class="form-control"
+          <input type="text" required class="form-control"
           v-model="sub2" placeholder="Subject 2">
         </div>
         <div class="col mb-1">
-          <input type="text" class="form-control" v-model="grad2"
+          <input type="text" required class="form-control" v-model="grad2"
            placeholder="Grade">
         </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control"
+        <input type="text" required class="form-control"
         v-model="sub3" placeholder="Subject 3">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad3" placeholder="Grade">
+        <input type="text" required class="form-control" v-model="grad3" placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="sub4" placeholder="Subject 4 ">
+        <input type="text" required class="form-control" v-model="sub4" placeholder="Subject 4 ">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad4" placeholder="Grade">
+        <input type="text" required class="form-control" v-model="grad4" placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="sub5"
+        <input type="text" required class="form-control" v-model="sub5"
         placeholder="Subject 5">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad5"
+        <input type="text" required class="form-control" v-model="grad5"
          placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="sub6"
+        <input type="text" required class="form-control" v-model="sub6"
         placeholder="Subject 6">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad6"
+        <input type="text" required class="form-control" v-model="grad6"
         placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="sub7"
+        <input type="text" required class="form-control" v-model="sub7"
         placeholder="Subject 7">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad7"
+        <input type="text" required class="form-control" v-model="grad7"
          placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control"
+        <input type="text" required class="form-control"
         v-model="sub8" placeholder="Subject 8">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad8"
+        <input type="text" required class="form-control" v-model="grad8"
          placeholder="Grade">
       </div>
       </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="sub9"
+        <input type="text" required class="form-control" v-model="sub9"
          placeholder="Subject 9">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control" v-model="grad9"
+        <input type="text" required class="form-control" v-model="grad9"
         placeholder="Grade">
       </div>
     </div>
       <div class="form-row">
       <div class="col mb-1">
-        <input type="text" class="form-control"
+        <input type="text" required class="form-control"
       v-model="sub10"  placeholder="Subject 10">
       </div>
       <div class="col mb-1">
-        <input type="text" class="form-control"
+        <input type="text" required class="form-control"
         v-model="grad10" placeholder="Grade">
       </div>
       </div>
@@ -247,7 +255,7 @@ export default {
       grad8:"",
       grad9:"",
       grad10:"",
-      school_of_choice:"",
+      school_of_choice:"Abia State Senior Science School Alayi",
       choice_of_center:"",
       pin:"",
       user:"",
@@ -260,7 +268,10 @@ console.log(this.$userId)
   computed:{
     isvalidForm(){
       return this.choice_of_center && this.school_of_choice&&this.fullname
-      &&this.basic_cert_no&&this.pin
+      &&this.basic_cert_no&&this.pin&&this.sub1&&this.sub2&&this.sub3&&this.sub4
+      &&this.sub5&&this.sub6&&this.sub7&&this.sub8&&this.sub9&&this.sub10&&this.grad1
+      &&this.grad2&&this.grad3&&this.grad4&&this.grad5&&this.grad6&&this.grad7&&this.grad8
+      &&this.grad9&&this.grad10
     }
   },
   methods:{
@@ -285,7 +296,8 @@ console.log(this.$userId)
       .then(
         response=>{
           if(response.status ==200){
-            this.msg="Successfully registered"
+            this.msg=`You have Successfully registered for
+            2019 Senior Science School Examination`
           }
           else{
             this.errormsg="Failed to Register"
@@ -314,6 +326,7 @@ console.log(this.$userId)
         sub5:this.sub5,
         sub6:this.sub6,
         sub7:this.sub7,
+        sub8:this.sub8,
         sub9:this.sub9,
         sub10:this.sub10,
         grad1:this.grad1,

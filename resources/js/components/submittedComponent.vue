@@ -48,262 +48,266 @@
       <div id="FormRequest">
         <h6 class="text-center"></h6>
         <div id="printMe" class="col-md-10 offset-md-1">
-          <h1 class="text-center">Form</h1>
+          <h1 class="text-center"> My Form</h1>
           <div class="row">
             <div class="col-md-12">
               <div class="col-md-3">
-                <img :src="'storage/profile_pics/'+this.passport" alt="image">
+                <img :src="'storage/profile_pics/'+this.passport" alt="image"
+                class="img-fluid max-width:50% height:50%">
               </div>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <hr>
+              <span class="ml-2 mr-3 dark">
                Name(s) of Applicant in Full:
              </span>
-              <span class="col-md-7">
+              <span class="col-md-6">
                 {{this.fullname}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class=" ml-2 mr-3 dark">
                Sex:
              </span>
-              <span class="col-md-7">
+              <span class="col-md-6">
                 {{this.sex}}
               </span>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="ml-2 mr-3 dark">
                Contact Address:
              </span>
               <span class="col-md-7">
                 {{this.address}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="ml-2 mr-3 dark">
                Name of Parents:
              </span>
-              <span class="col-md-7">
+              <span class="col-md-6">
                 {{this.parent}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="mr-3 ml-2 dark">
                Local Government Area:
              </span>
-              <span class="col-md-7">
+              <span class="col-md-6">
                 {{this.lga}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="ml-2 mr-3 dark">
               State Of Origin:
              </span>
               <span class="col-md-7">
                 {{this.state}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="dark ml-2 mr-3">
                Name of Last Secondary School Attended:
              </span>
               <span class="col-md-7">
                 {{this.last_school}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="dark ml-2 mr-3">
                Basic Education Certificate Exam No:
              </span>
               <span class="col-md-7">
                 {{this.basic_cert_no}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
               <h5 class="text-center"></h5>
-              <span class="col-md-5">
-               Subject 1:
+              <span class="float-left mr-1 ml-3 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left mr-4">
                 {{this.sub1}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 1:
+              <span class="float-left dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1">
                 {{this.grade1}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 2:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub2}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 2:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade2}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 3:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub3}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 3:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade3}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 4:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub4}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 4:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade4}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 5:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub5}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 5:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade5}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 6:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub6}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 6:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade6}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 7:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub7}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 7:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade7}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 8:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub8}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 8:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ">
                 {{this.grade8}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 9:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub9}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 9:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left col-md-3">
                 {{this.grade9}}
               </span>
+
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
-               Subject 10:
+              <span class="float-left ml-3 mr-1 dark">
+               Subject:
              </span>
-              <span class="col-md-7">
+              <span class="float-left ml-1 mr-3">
                 {{this.sub10}}
               </span>
-            </div>
-            <div class="col-md-12">
-              <span class="col-md-5">
-               Grade 10:
+              <span class="float-left mr-1 dark">
+               Grade:
              </span>
-              <span class="col-md-7">
+              <span class="float-left col-md-3">
                 {{this.grade10}}
               </span>
+
             </div>
+
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="ml-3 mr-1 dark">
                Choice of School:
              </span>
-              <span class="col-md-7">
+              <span class="ml-1">
                 {{this.school_of_choice}}
               </span>
+              <hr>
             </div>
             <div class="col-md-12">
-              <span class="col-md-5">
+              <span class="ml-3 mr-1 dark">
                Choice of Center:
              </span>
-              <span class="col-md-7">
+              <span class="ml-1">
                 {{this.choice_of_center}}
               </span>
             </div>
+            <hr>
             <div class="col-md-12">
               <p class="mt-1">Subject for Examination:</p>
               <p class="">  English,Mathematics, and Basic Science/Technology.</p>
+              <hr>
             </div>
-            <div class="form-row">
+            <div class="col-md-12">
               <!-- <div class="col"> -->
-                <p>7th August 2019</p>
+                <p class="text-center">7th August 2019</p>
               <!-- </div> -->
+              <hr>
             </div>
           </div>
         </div>
